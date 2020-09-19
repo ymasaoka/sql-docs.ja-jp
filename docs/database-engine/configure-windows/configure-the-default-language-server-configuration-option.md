@@ -23,7 +23,7 @@ ms.locfileid: "85697649"
 # <a name="configure-the-default-language-server-configuration-option"></a>default language サーバー構成オプションの構成
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  このトピックでは、 **または** を使用して、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] の [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] default language [!INCLUDE[tsql](../../includes/tsql-md.md)]サーバー構成オプションを構成する方法について説明します。 **default language** は、新しく作成したすべてのログインで使用される既定の言語を指定するオプションです。 既定の言語を設定するには、目的の言語の **langid** 値を指定します。 **langid** 値は、 **sys.syslanguages** 互換性ビューをクエリすることによって取得できます。  
+  このトピックでは、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]で **default language** サーバー構成オプションを構成する方法について説明します。 **default language** は、新しく作成したすべてのログインで使用される既定の言語を指定するオプションです。 既定の言語を設定するには、目的の言語の **langid** 値を指定します。 **langid** 値は、 **sys.syslanguages** 互換性ビューをクエリすることによって取得できます。  
   
  **このトピックの内容**  
   
@@ -50,7 +50,7 @@ ms.locfileid: "85697649"
 ###  <a name="security"></a><a name="Security"></a> セキュリティ  
   
 ####  <a name="permissions"></a><a name="Permissions"></a> Permissions  
- パラメーターなしで、または最初のパラメーターだけを指定して **sp_configure** を実行する権限は、既定ですべてのユーザーに付与されます。 両方のパラメーターを指定して **sp_configure** を実行し構成オプションを変更したり RECONFIGURE ステートメントを実行したりするには、ALTER SETTINGS サーバーレベル権限がユーザーに付与されている必要があります。 ALTER SETTINGS 権限は、 **sysadmin** 固定サーバー ロールと **serveradmin** 固定サーバー ロールでは暗黙のうちに付与されています。  
+ パラメーターなし、または最初のパラメーターのみを指定して **sp_configure** を実行する権限は、既定ですべてのユーザーに付与されます。 両方のパラメーターを指定して **sp_configure** を実行し構成オプションを変更したり RECONFIGURE ステートメントを実行したりするには、ALTER SETTINGS サーバーレベル権限がユーザーに付与されている必要があります。 ALTER SETTINGS 権限は、 **sysadmin** 固定サーバー ロールと **serveradmin** 固定サーバー ロールでは暗黙のうちに付与されています。  
   
 ##  <a name="using-sql-server-management-studio"></a><a name="SSMSProcedure"></a> SQL Server Management Studio の使用  
   
