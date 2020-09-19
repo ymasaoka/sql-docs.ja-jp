@@ -24,7 +24,7 @@ ms.locfileid: "85697724"
 # <a name="configure-the-default-full-text-language-server-configuration-option"></a>default full-text language サーバー構成オプションの構成
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  このトピックでは、 **で** または [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] を使用して、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] default full-text language [!INCLUDE[tsql](../../includes/tsql-md.md)]サーバー構成オプションを構成する方法について説明します。 **default full-text language** オプションでは、フルテキスト インデックスの既定の言語を指定します。 言語分析は、フルテキスト インデックスが作成されるすべてのデータに対して実行され、データの言語に依存します。 このオプションの既定値は、サーバーの言語です。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のローカライズされたバージョンでは、適切な言語が存在する場合、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] セットアップによって **default full-text language** オプションはサーバーの言語に設定されます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のローカライズされていないバージョンでは、 **[既定のフルテキスト言語]** オプションは英語になります。  
+  このトピックでは、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]で、 **default full-text language [!INCLUDE[tsql](../../includes/tsql-md.md)]** サーバー構成オプションを構成する方法について説明します。 **default full-text language** オプションでは、フルテキスト インデックスの既定の言語を指定します。 言語分析は、フルテキスト インデックスが付与され、データの言語に依存するすべてのデータに対して実行されます。 このオプションの既定値は、サーバーの言語です。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のローカライズされたバージョンでは、適切な言語が存在する場合、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]セットアップは既定の **default full-text language** オプションをサーバーの言語に設定します。 ローカライズされていないバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]では、 **default full-text language** オプションは英語になります。  
   
  **このトピックの内容**  
   
@@ -48,18 +48,18 @@ ms.locfileid: "85697724"
   
 ###  <a name="limitations-and-restrictions"></a><a name="Restrictions"></a> 制限事項と制約事項  
   
--   CREATE FULLTEXT INDEX または ALTER FULLTEXT INDEX ステートメントで LANGUAGE **language_term** オプションを使用して列に言語が指定されていない場合、 **default full-text language** オプションの値がフルテキスト インデックスで使用されます。 既定のフルテキスト言語がサポートされていない場合や、言語分析パッケージがない場合は、CREATE または ALTER 操作に失敗し、指定した言語が有効でないというエラー メッセージが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって表示されます。  
+-   CREATE FULLTEXT INDEX または ALTER FULLTEXT INDEX ステートメントで LANGUAGE **language_term** オプションを使用して列に言語が指定されていない場合、 **default full-text language** オプションの値がフルテキスト インデックスで使用されます。 既定のフルテキスト言語がサポートされていない場合や、言語分析パッケージがない場合は、CREATE または ALTER 操作は失敗し、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]は指定した言語が無効であることを示すエラー メッセージを返します。  
   
 ###  <a name="recommendations"></a><a name="Recommendations"></a> 推奨事項  
   
 -   このオプションは詳細設定オプションであるため、熟練したデータベース管理者または認定された [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] プロフェッショナルだけが変更するようにしてください。  
   
--   **default full-text language** オプションでは、LCID 値を指定する必要があります。 サポートされている LCID とその関連言語の一覧については、「 [sys.fulltext_languages &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-fulltext-languages-transact-sql.md)サーバー構成オプションを構成する方法について説明します。 他の言語も独立ソフトウェア ベンダーから入手可能です。 特定の言語の方言が見つからない場合は、Full-Text Engine によって自動的にプライマリ言語に切り替えられます。  
+-   **default full-text language** オプションでは、LCID 値を指定する必要があります。 サポートされている LCID とその関連言語の一覧については、 [sys.fulltext_languages &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-fulltext-languages-transact-sql.md)を参照してください。 たとえば、他の言語も独立系ソフトウェア ベンダーから入手できる場合があります。 特定の言語の方言が見つからない場合は、Full-Text Engine によって自動的にプライマリ言語に切り替えられます。  
   
 ###  <a name="security"></a><a name="Security"></a> セキュリティ  
   
 ####  <a name="permissions"></a><a name="Permissions"></a> Permissions  
- パラメーターなしで、または最初のパラメーターだけを指定して **sp_configure** を実行する権限は、既定ですべてのユーザーに付与されます。 両方のパラメーターを指定して **sp_configure** を実行し構成オプションを変更したり RECONFIGURE ステートメントを実行したりするには、ALTER SETTINGS サーバーレベル権限がユーザーに付与されている必要があります。 ALTER SETTINGS 権限は、 **sysadmin** 固定サーバー ロールと **serveradmin** 固定サーバー ロールでは暗黙のうちに付与されています。  
+ パラメーターなし、または最初のパラメーターだけを指定して **sp_configure** を実行する権限は、既定ですべてのユーザーに付与されます。 両方のパラメーターを指定して **sp_configure** を実行し構成オプションを変更したり RECONFIGURE ステートメントを実行したりするには、ALTER SETTINGS サーバーレベル権限がユーザーに付与されている必要があります。 ALTER SETTINGS 権限は、 **sysadmin** 固定サーバー ロールと **serveradmin** 固定サーバー ロールでは暗黙のうちに付与されています。  
   
 ##  <a name="using-sql-server-management-studio"></a><a name="SSMSProcedure"></a> SQL Server Management Studio の使用  
   
