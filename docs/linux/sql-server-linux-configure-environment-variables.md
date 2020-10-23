@@ -48,7 +48,7 @@ Linux では、いくつかの異なる環境変数を使って SQL Server 2019 
 |-----|-----|
 | **ACCEPT_EULA** | **ACCEPT_EULA** 変数を任意の値に設定し、[使用許諾契約書](https://go.microsoft.com/fwlink/?LinkId=746388)の承諾を確定します。 SQL Server イメージの設定が必要です。 |
 | **MSSQL_SA_PASSWORD** | SA ユーザーのパスワードを構成します。 |
-| **MSSQL_PID** | SQL Server のエディションまたはプロダクト キーを設定します。 指定できる値は、次のとおりです。 </br></br>**評価**</br>**開発者**</br>**Express**</br>**Web**</br>**Standard**</br>**Enterprise**</br>**プロダクト キー**</br></br>プロダクト キーを指定する場合は、#####-#####-#####-#####-##### という形式にする必要があります。ここで、'#' は数字または文字を表します。|
+| **MSSQL_PID** | SQL Server のエディションまたはプロダクト キーを設定します。 指定できる値は、次のとおりです。 </br></br>**Evaluation**</br>**Developer**</br>**Express**</br>**Web**</br>**Standard**</br>**Enterprise**</br>**プロダクト キー**</br></br>プロダクト キーを指定する場合は、#####-#####-#####-#####-##### という形式にする必要があります。ここで、'#' は数字または文字を表します。|
 | **MSSQL_LCID** | SQL Server に使用する言語 ID を設定します。 たとえば、1036 はフランス語です。 |
 | **MSSQL_COLLATION** | SQL Server の既定の照合順序を設定します。 これにより、言語 ID (LCID) から照合順序への既定のマッピングがオーバーライドされます。 |
 | **MSSQL_MEMORY_LIMIT_MB** | SQL Server が使用できるメモリの最大容量 (MB 単位) を設定します。 既定では、これは物理メモリの合計容量の 80% です。 |
@@ -72,7 +72,7 @@ Linux では、いくつかの異なる環境変数を使って SQL Server 2019 
 |-----|-----|
 | **ACCEPT_EULA** | **ACCEPT_EULA** 変数を任意の値に設定し、[使用許諾契約書](https://go.microsoft.com/fwlink/?LinkId=746388)の承諾を確定します。 SQL Server イメージの設定が必要です。 |
 | **MSSQL_SA_PASSWORD** | SA ユーザーのパスワードを構成します。 |
-| **MSSQL_PID** | SQL Server のエディションまたはプロダクト キーを設定します。 指定できる値は、次のとおりです。 </br></br>**評価**</br>**開発者**</br>**Express**</br>**Web**</br>**Standard**</br>**Enterprise**</br>**プロダクト キー**</br></br>プロダクト キーを指定する場合は、#####-#####-#####-#####-##### という形式にする必要があります。ここで、'#' は数字または文字を表します。|
+| **MSSQL_PID** | SQL Server のエディションまたはプロダクト キーを設定します。 指定できる値は、次のとおりです。 </br></br>**Evaluation**</br>**Developer**</br>**Express**</br>**Web**</br>**Standard**</br>**Enterprise**</br>**プロダクト キー**</br></br>プロダクト キーを指定する場合は、#####-#####-#####-#####-##### という形式にする必要があります。ここで、'#' は数字または文字を表します。|
 | **MSSQL_LCID** | SQL Server に使用する言語 ID を設定します。 たとえば、1036 はフランス語です。 |
 | **MSSQL_COLLATION** | SQL Server の既定の照合順序を設定します。 これにより、言語 ID (LCID) から照合順序への既定のマッピングがオーバーライドされます。 |
 | **MSSQL_MEMORY_LIMIT_MB** | SQL Server が使用できるメモリの最大容量 (MB 単位) を設定します。 既定では、これは物理メモリの合計容量の 80% です。 |
